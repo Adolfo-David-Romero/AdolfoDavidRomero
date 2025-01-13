@@ -1,0 +1,26 @@
+body {
+    background: linear-gradient(45deg, #1E524B, #3C6F65, #1E524B);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #F0EBDC; /* Ensures text is readable against the background */
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  @keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+  }
+  
