@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Outfit';
+  src: url('/assets/fonts/Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; /* Supports all weights from 100 to 900 */
+  font-style: normal;
+  font-display: swap;
+}
+
 /* General Reset */
 body, ul, li, a {
   margin: 0;
@@ -5,18 +13,26 @@ body, ul, li, a {
   list-style: none;
   text-decoration: none;
 }
+/* Global Header Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
 .header-container{
   display: flex; /* Align title and nav in a row */
+  flex-direction: row;
   align-items: center; /* Vertically center-align items */
   justify-content: space-between; /* Push title and nav to opposite ends */
   padding: 20px; /* Add space around the container */
-  
   position: fixed; /* Stays at the top of the page */
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  transition: 0.4s; /* Add a transition effect (when scrolling - and font size is decreased) */
 }
 .header-title{
   font-family: 'Poppins', sans-serif;
@@ -29,7 +45,7 @@ body, ul, li, a {
 
 /* Pill Navigation Bar */
 .pill-nav {
- 
+  position: relative;
   background-color: #2F675D;
   border-radius: 50px;
   padding: 10px 20px;
@@ -59,6 +75,19 @@ body, ul, li, a {
   transform: scale(1.1); /* Adds a hover effect */
 }
 
+/* Scroll Indicator Bubble */
+.scroll-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 0; /* Initial width */
+  height: 20px; /* Matches nav item height */
+  background-color: #3E8175;
+  border-radius: 60px;
+  transition: all 0.3s ease; /* Smooth expansion */
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #1E524B; /* Main background color */
@@ -73,6 +102,7 @@ section {
 
 #about {
   background: #3C6F65;
+  
 }
 
 #skills {
@@ -86,12 +116,6 @@ section {
 #contact {
   background: #4CAF50;
 }
-@font-face {
-  font-family: 'Outfit';
-  src: url('/assets/fonts/Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900; /* Supports all weights from 100 to 900 */
-  font-style: normal;
-  font-display: swap;
-}
+
 
   
