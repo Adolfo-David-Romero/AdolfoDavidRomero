@@ -1,26 +1,78 @@
+/* General Reset */
+body, ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
 body {
-    background: linear-gradient(45deg, #1E524B, #3C6F65, #1E524B);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #F0EBDC; /* Ensures text is readable against the background */
-  }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
-  @keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
-  }
+  font-family: 'Poppins', sans-serif;
+  background-color: #1E524B; /* Main background color */
+  color: white;
+  height: 200vh; /* Add height for scrolling demonstration */
+}
+
+/* Pill Navigation Bar */
+.pill-nav {
+  position: fixed;
+  top: 20px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  background-color: #2F675D;
+  border-radius: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.pill-nav ul {
+  display: flex; /* Align links horizontally */
+  gap: 20px; /* Space between links */
+}
+
+.pill-nav li {
+  list-style: none;
+}
+
+.pill-nav a {
+  font-family: 'Outfit', 'sans-serif';
+  color: white;
+  font-weight: 150;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.pill-nav a:hover {
+  color: #A4DED3; /* Slightly lighter green on hover */
+  transform: scale(1.1); /* Adds a hover effect */
+}
+
+section {
+  padding: 100px 20px;
+  height: 100vh; /* Full viewport height */
+}
+
+#about {
+  background: #3C6F65;
+}
+
+#skills {
+  background: #4CAF50;
+}
+
+#projects {
+  background: #3C6F65;
+}
+
+#contact {
+  background: #4CAF50;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('/assets/fonts/Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; /* Supports all weights from 100 to 900 */
+  font-style: normal;
+  font-display: swap;
+}
+
   
