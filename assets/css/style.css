@@ -6,28 +6,40 @@ body, ul, li, a {
   text-decoration: none;
 }
 
-body {
+.header-container{
+  display: flex; /* Align title and nav in a row */
+  align-items: center; /* Vertically center-align items */
+  justify-content: space-between; /* Push title and nav to opposite ends */
+  padding: 20px; /* Add space around the container */
+  
+  position: fixed; /* Stays at the top of the page */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.header-title{
   font-family: 'Poppins', sans-serif;
-  background-color: #1E524B; /* Main background color */
-  color: white;
-  height: 200vh; /* Add height for scrolling demonstration */
+  font-size: 28px;
+  font-weight: 700;
+  color: #dbcfab;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
+  
 }
 
 /* Pill Navigation Bar */
 .pill-nav {
-  position: fixed;
-  top: 20px; /* Distance from the top */
-  right: 20px; /* Distance from the right */
+ 
   background-color: #2F675D;
   border-radius: 50px;
   padding: 10px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
-  z-index: 1000; /* Ensure it stays on top */
+ 
 }
 
 .pill-nav ul {
   display: flex; /* Align links horizontally */
-  gap: 20px; /* Space between links */
+  gap: 25px; /* Space between links */
 }
 
 .pill-nav li {
@@ -43,8 +55,15 @@ body {
 }
 
 .pill-nav a:hover {
-  color: #A4DED3; /* Slightly lighter green on hover */
+  color: #dbcfab;
   transform: scale(1.1); /* Adds a hover effect */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1E524B; /* Main background color */
+  color: white;
+  height: 200vh; /* Add height for scrolling demonstration */
 }
 
 section {
