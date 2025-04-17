@@ -1,45 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Get all sections and the scroll indicator
     const sections = document.querySelectorAll('section');
     const indicator = document.getElementById('indicator');
-    const navItems = document.querySelectorAll('.pill-nav ul li');
+    const navLinks = document.querySelectorAll('.pill-nav ul li a');
 
-    // Get the starting position of the "About" nav item
-    const aboutNavItem = document.querySelector('.pill-nav ul li a[href="#about"]').parentElement;
-    const aboutRect = aboutNavItem.getBoundingClientRect();
-    const aboutLeft = aboutRect.left;
+    // Get the "About" nav item (anchor start point)
+    const aboutLink = document.querySelector('.pill-nav a[href="#about"]');
+    const aboutItem = aboutLink?.parentElement;
 
-    // Set the initial left position of the indicator
-    indicator.style.left = `${aboutLeft}px`;
+    let aboutLeft = 0;
 
-    // Function to update the indicator width based on scroll position
-    const updateIndicator = () => {
-        let maxWidth = 0;
-
-        // Get the current scroll position
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-        // Find the current section and calculate the total width to expand
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                const currentNavItem = document.querySelector(`.pill-nav ul li a[href="#${section.id}"]`).parentElement;
-                const currentRect = currentNavItem.getBoundingClientRect();
-
-                // Calculate the width from the "About" nav item's left to the current section's nav item's right
-                maxWidth = currentRect.left + currentRect.width - aboutLeft;
-            }
-        });
-
-        // Update the indicator width
-        indicator.style.width = `${maxWidth}px`;
+    const measureInitialOffsets = () => {
+        aboutLeft = aboutItem.offsetLeft;
     };
 
-    // Attach the scroll event listener
-    window.addEventListener('scroll', updateIndicator);
+    const updateIndicator = () => {
+        let scrollMiddle = window.scrollY + window.innerHeight / 2;
 
-    // Initialize the indicator width
+        for (let section of sections) {
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+
+            if (scrollMiddle >= top && scrollMiddle < bottom) {
+                const activeLink = document.querySelector(`.pill-nav a[href="#${section.id}"]`);
+                const activeItem = activeLink?.parentElement;
+
+                if (activeItem) {
+                    const activeRight = activeItem.offsetLeft + activeItem.offsetWidth;
+                    const width = activeRight - aboutLeft;
+                    indicator.style.left = `${aboutLeft}px`;
+                    indicator.style.width = `${width}px`;
+                }
+
+                break;
+            }
+        }
+    };
+
+    window.addEventListener('scroll', updateIndicator);
+    window.addEventListener('resize', () => {
+        measureInitialOffsets();
+        updateIndicator();
+    });
+
+    // Initial load
+    measureInitialOffsets();
     updateIndicator();
 });

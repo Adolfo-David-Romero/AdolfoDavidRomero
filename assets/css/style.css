@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-container{
+  
   display: flex; /* Align title and nav in a row */
   flex-direction: row;
   align-items: center; /* Vertically center-align items */
@@ -67,6 +68,8 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   font-weight: 150;
   font-size: 16px;
+  position: relative; 
+  z-index: 2;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
@@ -81,19 +84,20 @@ h1, h2, h3, h4, h5, h6 {
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  width: 0; /* Initial width */
-  height: 20px; /* Matches nav item height */
+  width: 0;
+  height: 35px;
   background-color: #3E8175;
-  border-radius: 60px;
-  transition: all 0.3s ease; /* Smooth expansion */
+  border-radius: 50px;
+  z-index: 0;
+  transition: all 0.3s ease;
 }
 
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #1E524B; /* Main background color */
+  background-color: #1E524B; 
   color: white;
-  height: 200vh; /* Add height for scrolling demonstration */
+  height: 200vh; 
 }
 
 section {
@@ -117,6 +121,5 @@ section {
 #contact {
   background: #4CAF50;
 }
-
 
   
