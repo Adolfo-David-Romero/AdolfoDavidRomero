@@ -23,7 +23,9 @@
   margin-left: 230px; /* Matches the image margin */
 }
 .content-right {
-  margin-right: 230px; /* Matches the image margin */
+  display: flex;
+  align-content: end; 
+  
 }
 
 
@@ -106,7 +108,7 @@ body{
   font-family: 'DM Sans';
   font-size: 25px;
   font-weight: 20;
-  color: #dbcfab;
+  color: #F0EBDC;
 }
 .social-buttons{
   display: flex;
@@ -165,6 +167,15 @@ body{
   font-weight: 400;
   font-size: 3rem;
   color: #dbcfab;
+}
+.whoami-section p{
+  max-width: 800px;
+  margin: 0;
+  letter-spacing: 0.15em;
+  font-family: 'DM Sans';
+  font-size: 1rem;
+  font-weight: 300;
+  color: #F0EBDC;
 }
 
 /*      DIFFERENT SCREEN SIZES      */
