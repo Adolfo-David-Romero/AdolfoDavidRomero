@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*      FONTS STYLING STARTS      */
 @font-face {
   font-family: 'Outfit';
   src: url('/assets/fonts/Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
@@ -5,24 +11,47 @@
   font-style: normal;
   font-display: swap;
 }
-
-/* General Reset */
-body, ul, li, a {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
-/* Global Header Styles */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/assets/fonts/DMSans/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: 100 900; /* Supports all weights from 100 to 900 */
+  font-style: normal;
+  font-display: swap;
 }
 
-.header-container{
+.content-left {
+  margin-left: 230px; /* Matches the image margin */
+}
+.content-right {
+  display: flex;
+  align-content: end; 
   
+}
+
+
+/*      FONTS STYLING ENDS      */
+body{
+  min-width: 100vh;
+  background: #0c192c;
+}
+.container{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes animate{
+  0%{
+    transform: translateY(100vh) scale(0);
+  }
+  100%{
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
+/*      HEADER SECTION STYLING START      */
+.header-container{
   display: flex; /* Align title and nav in a row */
   flex-direction: row;
   align-items: center; /* Vertically center-align items */
@@ -43,83 +72,210 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
   
 }
+/*      HEADER SECTION STYLING ENDS      */
 
-/* Pill Navigation Bar */
-.pill-nav {
-  position: relative;
-  background-color: #2F675D;
-  border-radius: 50px;
-  padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
- 
+/*      HERO SECTION STYLING START      */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end; /* Allign text to the bottom of the image */
+  gap: 2rem; /* space between image and text */
+  padding: 2rem;
+}
+.headshot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.headshot{
+  margin-top: 100px;
+  margin-left: 200px;
+}
+.hero-text{
+  max-width: 800px;
 }
 
-.pill-nav ul {
-  display: flex; /* Align links horizontally */
-  gap: 25px; /* Space between links */
-}
-
-.pill-nav li {
-  list-style: none;
-}
-
-.pill-nav a {
-  font-family: 'Outfit', 'sans-serif';
-  color: white;
-  font-weight: 150;
-  font-size: 16px;
-  position: relative; 
-  z-index: 2;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.pill-nav a:hover {
+.hero-text h1{
+  margin: 0;
+  font-family: 'outfit';
+  font-size: 60px;
+  font-weight: 350;
   color: #dbcfab;
-  transform: scale(1.1); /* Adds a hover effect */
+}
+.hero-text p{
+  margin: 0;
+  max-width: 590px;
+  font-family: 'DM Sans';
+  font-size: 25px;
+  font-weight: 20;
+  color: #F0EBDC;
+}
+.social-buttons{
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.social-btn{
+  min-width: 3rem;
+  max-width: 240px; /* limit max growth */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #dbcfab;
+  color: #000;
+  text-decoration: none; /*removes hyperlink underline*/
+  border-radius: 999px;
+  padding: 0.05rem;
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden; /*Removes the text overflow*/
+  white-space: nowrap;
+  transition: all 0.4s ease; 
+  position: relative;
+}
+.social-btn img {
+  width: 2.9rem;
+  height: 2.9rem;
+  flex-shrink: 0;
+}
+.social-btn span {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Scroll Indicator Bubble */
-.scroll-indicator {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  width: 0;
-  height: 35px;
-  background-color: #3E8175;
-  border-radius: 50px;
-  z-index: 0;
-  transition: all 0.3s ease;
+.social-btn:hover {
+  width: auto;
+  padding: 0.75rem 1.2rem;
+}
+.social-btn:hover span {
+  opacity: 1;
+}
+/*      HERO SECTION STYLING ENDS      */
+
+/*      WHO AM I SECTION STYLING STARTS      */
+.whoami-section{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #1E524B; 
-  color: white;
-  height: 200vh; 
+.whoami-section h1{
+  margin: 0;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #dbcfab;
+}
+.whoami-section p{
+  max-width: 800px;
+  margin: 0;
+  letter-spacing: 0.15em;
+  font-family: 'DM Sans';
+  font-size: 1rem;
+  font-weight: 300;
+  color: #F0EBDC;
 }
 
-section {
-  padding: 100px 20px;
-  height: 100vh; /* Full viewport height */
+/*      DIFFERENT SCREEN SIZES      */
+
+/*Small phones*/
+@media (max-width: 480px) {
+  .content-left,
+  .content-right {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .headshot-wrapper {
+    align-items: center;
+  }
+
+  .headshot {
+    margin-left: 0;
+    margin-top: 2rem;
+    width: 200px;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .social-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-btn {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+  }
+
+  .whoami-section h1 {
+    font-size: 2rem;
+  }
 }
 
-#about {
-  background: #3C6F65;
-  
+/*Tablets*/
+@media (max-width: 768px) {
+  .content-left,
+  .content-right {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .headshot {
+    margin-left: 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .whoami-section h1 {
+    font-size: 2.5rem;
+  }
 }
 
-#skills {
-  background: #4CAF50;
-}
+/*Medium Desktops*/
+@media (max-width: 1024px) {
+  .content-left,
+  .content-right {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 
-#projects {
-  background: #3C6F65;
-}
+  .hero-text h1 {
+    font-size: 3rem;
+  }
 
-#contact {
-  background: #4CAF50;
+  .hero-text p {
+    font-size: 1.4rem;
+  }
 }
-
-  
