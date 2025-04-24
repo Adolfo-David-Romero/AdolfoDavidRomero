@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 @font-face {
   font-family: 'Outfit';
   src: url('/assets/fonts/Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
@@ -5,24 +10,51 @@
   font-style: normal;
   font-display: swap;
 }
-
-/* General Reset */
-body, ul, li, a {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
+body{
+  min-width: 100vh;
+  background: #0c192c;
 }
-/* Global Header Styles */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  margin: 0;
-  padding: 0;
+.container{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+/*Bubbles animation styles*/
+.bubbles{
+  position: relative;
+  display: flex;
+}
+.bubbles span{
+  position:relative;
+  width: 30px;
+  height: 30px;
+  background: #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44,
+  0 0 50px #dbcfab,
+  0 0 100px #dbcfab;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(120s / var(--i));
+}
+.bubbles span:nth-child(even){
+  background: #ff2d75;
+  box-shadow: 0 0 0 10px #ff2d7544,
+  0 0 50px #ff2d75,
+  0 0 100px #ff2d75;
+}
+@keyframes animate{
+  0%{
+    transform: translateY(100vh) scale(0);
+  }
+  100%{
+    transform: translateY(-10vh) scale(1);
+  }
 }
 
+/*header (ADOLFO DAVID ROMERO) area*/
 .header-container{
-  
   display: flex; /* Align title and nav in a row */
   flex-direction: row;
   align-items: center; /* Vertically center-align items */
@@ -44,82 +76,4 @@ h1, h2, h3, h4, h5, h6 {
   
 }
 
-/* Pill Navigation Bar */
-.pill-nav {
-  position: relative;
-  background-color: #2F675D;
-  border-radius: 50px;
-  padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
- 
-}
 
-.pill-nav ul {
-  display: flex; /* Align links horizontally */
-  gap: 25px; /* Space between links */
-}
-
-.pill-nav li {
-  list-style: none;
-}
-
-.pill-nav a {
-  font-family: 'Outfit', 'sans-serif';
-  color: white;
-  font-weight: 150;
-  font-size: 16px;
-  position: relative; 
-  z-index: 2;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.pill-nav a:hover {
-  color: #dbcfab;
-  transform: scale(1.1); /* Adds a hover effect */
-}
-
-/* Scroll Indicator Bubble */
-.scroll-indicator {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  width: 0;
-  height: 35px;
-  background-color: #3E8175;
-  border-radius: 50px;
-  z-index: 0;
-  transition: all 0.3s ease;
-}
-
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #1E524B; 
-  color: white;
-  height: 200vh; 
-}
-
-section {
-  padding: 100px 20px;
-  height: 100vh; /* Full viewport height */
-}
-
-#about {
-  background: #3C6F65;
-  
-}
-
-#skills {
-  background: #4CAF50;
-}
-
-#projects {
-  background: #3C6F65;
-}
-
-#contact {
-  background: #4CAF50;
-}
-
-  
