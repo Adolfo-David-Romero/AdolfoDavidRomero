@@ -10,6 +10,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/assets/fonts/DMSans/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: 100 900; /* Supports all weights from 100 to 900 */
+  font-style: normal;
+  font-display: swap;
+}
 body{
   min-width: 100vh;
   background: #0c192c;
@@ -75,10 +82,33 @@ body{
   text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
   
 }
-
-.headshot{
-  margin-top: 120px;
-  margin-left: 100px;
+.hero-section {
+  display: flex;
+  align-items: flex-end; /* Allign text to the bottom of the image */
+  gap: 2rem; /* space between image and text */
+  padding: 2rem;
 }
 
+.headshot{
+  margin-top: 100px;
+  margin-left: 200px;
+}
+.hero-text{
+  max-width: 800px;
+}
 
+.hero-text h1{
+  margin: 0;
+  font-family: 'outfit';
+  font-size: 60px;
+  font-weight: 350;
+  color: #dbcfab;
+}
+.hero-text p{
+  margin: 0;
+  max-width: 590px;
+  font-family: 'DM Sans';
+  font-size: 25px;
+  font-weight: 20;
+  color: #dbcfab;
+}
