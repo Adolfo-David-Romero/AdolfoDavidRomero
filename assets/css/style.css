@@ -60,7 +60,7 @@ body{
   }
 }
 
-/*header (ADOLFO DAVID ROMERO) area*/
+/*      HEADER SECTION STYLING START      */
 .header-container{
   display: flex; /* Align title and nav in a row */
   flex-direction: row;
@@ -82,13 +82,21 @@ body{
   text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
   
 }
+/*      HEADER SECTION STYLING ENDS      */
+
+/*      HERO SECTION STYLING START      */
 .hero-section {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end; /* Allign text to the bottom of the image */
   gap: 2rem; /* space between image and text */
   padding: 2rem;
 }
-
+.headshot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .headshot{
   margin-top: 100px;
   margin-left: 200px;
@@ -112,3 +120,43 @@ body{
   font-weight: 20;
   color: #dbcfab;
 }
+.social-buttons{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.social-btn{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #dbcfab;
+  color: #000;
+  text-decoration: none; /*removes hyperlink underline*/
+  border-radius: 999px;
+  padding: 0.08rem;
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden; /*Removes the text overflow*/
+  white-space: nowrap;
+  transition: width 0.3s ease, padding 0.3s ease;
+  position: relative;
+}
+.social-btn img {
+  width: 2.8rem;
+  height: 2.8rem;
+  flex-shrink: 0;
+}
+.social-btn span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 0.95rem;
+}
+.social-btn:hover {
+  width: auto;
+  padding: 0.75rem 1.2rem;
+}
+.social-btn:hover span {
+  opacity: 1;
+}
+/*      HERO SECTION STYLING ENDS      */
