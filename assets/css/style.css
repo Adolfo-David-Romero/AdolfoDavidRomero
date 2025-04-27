@@ -3,6 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/*      BACKGROUND STYLING STARTS     */
+/*https://animated-gradient-background-generator.netlify.app/*/
+.gradient-background {
+  z-index: -1; /*pushes as background*/
+  background: linear-gradient(300deg,#439a86,#143f39,#669991);
+  background-size: 240% 240%;
+  animation: gradient-animation 36s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*      BACKGROUND STYLING ENDS     */
 /*      FONTS STYLING STARTS      */
 @font-face {
   font-family: 'Outfit';
