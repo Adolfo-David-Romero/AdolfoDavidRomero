@@ -52,14 +52,16 @@
 
 /*      FONTS STYLING ENDS      */
 body{
-  min-width: 100vh;
-  background: #0c192c;
-}
-.container{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  max-width: fit-content;
+  margin-left: 12.5rem;
+  margin-right: 12.5rem;
+  margin-top: 6.25rem;
+
+ /*background*/
+  z-index: -1; /*pushes as background*/
+  background: linear-gradient(300deg,#439a86,#143f39,#669991);
+  background-size: 240% 240%;
+  animation: gradient-animation 36s ease infinite;
 }
 
 @keyframes animate{
@@ -87,10 +89,10 @@ body{
 }
 .header-title{
   font-family: 'Poppins', sans-serif;
-  font-size: 28px;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #dbcfab;
-  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
+  text-shadow: 0 0.8rem 0.5rem rgba(0, 0, 0, 0.2); /* Adds depth */
   
 }
 /*      HEADER SECTION STYLING ENDS      */
@@ -101,19 +103,15 @@ body{
   flex-wrap: wrap;
   align-items: flex-end; /* Allign text to the bottom of the image */
   gap: 2rem; /* space between image and text */
-  padding: 2rem;
+  padding: 2rem 0 6rem 0;
 }
 .headshot-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.headshot{
-  margin-top: 100px;
-  margin-left: 200px;
-}
 .hero-text{
-  max-width: 800px;
+  max-width: 50rem;
 }
 
 .hero-text h1{
@@ -125,7 +123,6 @@ body{
 }
 .hero-text p{
   margin: 0;
-  max-width: 700px;
   font-family: 'DM Sans';
   font-size: 2rem;
   font-weight: 20;
@@ -267,6 +264,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: auto;
 }
 
 .whoami-section h1{
