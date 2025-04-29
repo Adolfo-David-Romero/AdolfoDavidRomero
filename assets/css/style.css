@@ -101,16 +101,18 @@ body{
 .hero-section {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end; /* Allign text to the bottom of the image */
+  align-items: start; /* Allign text to the bottom of the image */
   gap: 2rem; /* space between image and text */
   padding: 2rem 0 6rem 0;
 }
 .headshot-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+
+
 }
 .hero-text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   max-width: 50rem;
 }
 
@@ -128,48 +130,69 @@ body{
   font-weight: 20;
   color: #F0EBDC;
 }
+/*button https://codepen.io/kilianstallz/pen/GXNVab */
 .social-buttons{
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-.social-btn{
-  min-width: 3rem;
-  max-width: 240px; /* limit max growth */
+  gap: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background-color: #dbcfab;
-  color: #000;
-  text-decoration: none; /*removes hyperlink underline*/
-  border-radius: 999px;
-  padding: 0.05rem;
-  width: 3rem;
-  height: 3rem;
-  overflow: hidden; /*Removes the text overflow*/
-  white-space: nowrap;
-  transition: all 0.4s ease; 
-  position: relative;
+
 }
-.social-btn img {
+
+.cta {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 2px solid black;
+  background-color: #dbcfab;
+  color: #fff;
+  transition: width 0.7s;
+}
+.cta:hover {
+  width: 180px;
+  transition: width 0.7s;
+}
+
+.cta i {
+  opacity: 1;
+  transition: opacity 0.5s
+}
+
+.cta:hover i {
+  opacity: 0;
+  transition: opacity 0.5s
+}
+
+.cta .button-text {
+  opacity: 0;
+  color: #000;
+  transition: opacity .5s;
+  width: 100%;
+  left: 0;
+ }
+ .cta img {
   width: 2.9rem;
   height: 2.9rem;
   flex-shrink: 0;
 }
-.social-btn span {
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
 
-.social-btn:hover {
-  width: auto;
-  padding: 0.75rem 1.2rem;
-}
-.social-btn:hover span {
+.cta:hover .button-text{
   opacity: 1;
+  font-family: 'outfit';
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
+  transition: opacity 0.5s
 }
+.cta:hover .social-icon{
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s
+}
+/*button*/
+
+
 /* Typewriter effect 1 */
 
 @keyframes typing {
