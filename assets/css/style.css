@@ -190,8 +190,6 @@ body{
   opacity: 0;
   transition: opacity 0.5s
 }
-/*button*/
-
 
 /* Typewriter effect 1 */
 
@@ -351,6 +349,23 @@ body{
   color: #F0EBDC;
   max-width: 600px;
   letter-spacing: 0.03em;
+}
+
+/*      SKILL SECTION     */
+.skills-section{
+  padding-top: 5rem;
+  display: flex;
+
+}
+.skills-section h1{
+  margin: 0;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #dbcfab;
+}
+.skill-card{
+
 }
 
 /*      DIFFERENT SCREEN SIZES      */
