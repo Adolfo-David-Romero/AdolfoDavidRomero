@@ -289,6 +289,7 @@ body{
 
 .whoami-section h1{
   margin: 0;
+  padding-bottom: 1.5rem;
   font-family: 'Poppins',sans-serif;
   font-weight: 400;
   font-size: 3rem;
